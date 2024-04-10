@@ -1,0 +1,1 @@
+# zerops-solid-static
