@@ -1,0 +1,13 @@
+zerops:
+  - setup: solidtest
+    build:
+      base: nodejs@18
+      buildCommands:
+        - npm i
+        - npm run build
+      deploy:
+        - "dist/~"
+
+      cache:
+        - node_modules
+        - pnpm-lock.json
