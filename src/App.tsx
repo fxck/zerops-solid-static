@@ -32,7 +32,7 @@ const App: Component = () => {
           </div>
           <div>
           <h1 class="text-6xl font-semibold justify-start mb-6">Solid.js + Zerops</h1>
-          <span class="px-40 bg-[#568FCB]"></span>
+          <hr class="border-[#E0EFFF]"></hr>
           <div class="text-[#568FCB] text-2xl font-medium mt-8">
           <p class="max-w-4xl">A Static Solid.js example for Zerops which you can deploy in 2 simple steps (Technically, we don't count Ctrl + V... but who's checking?). </p>
           <p>Scroll down to learn how to deploy.</p>
