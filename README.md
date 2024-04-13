@@ -1,8 +1,8 @@
 # Zerops + Nextjs - Static
 
-![Header Image](public/ZeropsNextjs.png)
+![Header Image](src/public/header.png)
 
-A Static Next.js example for Zerops that you can deploy in 2 steps on zerops.
+A Static Solid.js example for Zerops which you can deploy in 2 simple steps.
 
 **Features**
 
@@ -18,10 +18,10 @@ A Static Next.js example for Zerops that you can deploy in 2 steps on zerops.
 
 ```yaml
 project:
-  name: zerops-nextjs
+  name: zerops-solid
 
 services:
-  - hostname: nextstatic
+  - hostname: solidstatic
     type: nginx@1.22
     nginxConfig: |-
       server {
@@ -38,7 +38,7 @@ services:
           access_log syslog:server=unix:/dev/log,facility=local1 default_short;
           error_log syslog:server=unix:/dev/log,facility=local1;
       }
-    buildFromGit: https://github.com/fxck/zerops-next-static
+    buildFromGit: https://github.com/fxck/zerops-solid-static
     enableSubdomainAccess: true
     minContainers: 1
 ```
