@@ -46,7 +46,8 @@ export function Code({ code }) {
     <pre class="bg-[#EEF4FA] rounded-md p-8 my-8 relative">
       <button
         onClick={copy}
-        class="absolute top-4 right-4 p-2 rounded-md bg-[#568FCB] text-[#fff]">
+        class="absolute top-4 right-4 p-2 rounded-md bg-[#568FCB] text-[#fff]"
+      >
         {copied() ? <CheckIcon /> : <CopyIcon />}
       </button>
       <code class="text-[#568FCB] font-medium text-sm">{code}</code>

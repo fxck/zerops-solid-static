@@ -59,10 +59,9 @@
   flex-shrink: 0;
 }
 
-
 .container {
   display: grid;
-grid-template-columns: 480px auto;
+  grid-template-columns: 480px auto;
 }
 
 .main {
@@ -71,8 +70,8 @@ grid-template-columns: 480px auto;
 }
 
 .primarybutton {
-  background-color: #568FCB;
-  color: #EEF4FA;
+  background-color: #568fcb;
+  color: #eef4fa;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
   padding-top: 0.5rem;
@@ -82,16 +81,16 @@ grid-template-columns: 480px auto;
   border-radius: 2rem;
   font-weight: 600;
   font-size: 22px;
-  transition: 0.10s;
+  transition: 0.1s;
 }
 
 .primarybutton:hover {
   background-color: #4b88c9;
 }
 
-.secondarybutton  {
-  background-color: #EEF4FA;
-  color: #568FCB;
+.secondarybutton {
+  background-color: #eef4fa;
+  color: #568fcb;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
   padding-top: 0.5rem;
@@ -100,11 +99,11 @@ grid-template-columns: 480px auto;
   border-radius: 2rem;
   font-weight: 600;
   font-size: 22px;
-  transition: 0.10s;
+  transition: 0.1s;
 }
 
 .secondarybutton:hover {
-    background-color: #f4f7fa;
+  background-color: #f4f7fa;
 }
 
 .buttons {
@@ -124,5 +123,5 @@ a {
 }
 
 h1 {
-  color: #477ABE;
+  color: #477abe;
 }
