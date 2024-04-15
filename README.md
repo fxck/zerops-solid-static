@@ -1,6 +1,6 @@
 # Zerops + Nextjs - Static
 
-![Header Image](src/public/header.png)
+![Header Image](/header.png)
 
 A Static Solid.js example for Zerops which you can deploy in 2 simple steps.
 

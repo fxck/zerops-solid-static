@@ -63,7 +63,7 @@ const App: Component = () => {
             </div>
             <p class="text-[#568FCB] font-medium">
               Powered By{" "}
-              <a href="https://zerops.io/" class="font-bold" target="_blank">
+              <a href="https://zerops.io/" target="_blank">
                 Zerops
               </a>
             </p>

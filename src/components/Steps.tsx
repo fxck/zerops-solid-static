@@ -31,13 +31,15 @@ services:
       <h1 class="text-3xl font-semibold">Step 1: Go To Zerops Dashboard</h1>
       <img src={dashboard} class="rounded-lg my-6" alt="dashboard image" />
       <p class="text-[#568FCB] text-xl font-medium">
-        Click on the 'Import Project' button on the sidebar. (Not a user?
-        Register now)
+        Go to <a href="https://app.zerops.io/dashboard/projects" target="_blank">Zerops Dashboard</a> and Click on the 'Import Project' button on the sidebar. (Not a user?
+        <a href="https://zerops.io/" target="_blank">{" "}Register now</a> )
       </p>
       <div class="mt-16 pb-4">
         <h1 class="text-3xl font-semibold">Step 2: Paste the project Yaml</h1>
         <p class="text-[#568FCB] text-xl font-medium mt-4">
-          Copy the YAML code mentioned below and paste it to import the project.
+          Copy the YAML code mentioned here and paste it to import this example.
+        </p>
+        <p class="text-[#568FCB] text-xl font-medium mt-4">
           Alternatively, you can clone zerops-solid-static to your GitHub
           profile and then replace the repository URL in the buildFromGit
           parameter.

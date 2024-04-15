@@ -114,8 +114,13 @@
 }
 
 a {
-  color: none;
+  color: #518dcc;
+  font-weight: 700;
   text-decoration: none;
+}
+
+a:hover {
+  color: #4681c1;
 }
 
 .nermal {
