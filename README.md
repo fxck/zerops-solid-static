@@ -1,4 +1,4 @@
-# Zerops + Nextjs - Static
+# Zerops + Solid.js - Static
 
 ![Header Image](/header.png)
 
