@@ -1,13 +1,18 @@
 zerops:
-  - setup: solidtest
+  - setup: app
     build:
-      base: nodejs@18
+      base: nodejs@20
       buildCommands:
-        - npm i
-        - npm run build
-      deploy:
-        - "dist/~"
+        - pnpm i
+        - pnpm build
+      deployFiles:
+        - dist/~
+    run:
+      base: static
 
-      cache:
-        - node_modules
-        - pnpm-lock.json
+
+# you can ignore this, it's used
+# for a version of recipe with 
+# both static and ssr versions
+  - setup: staticapp
+    extends: app  
