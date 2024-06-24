@@ -8,9 +8,9 @@ const CopyIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
   >
     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -33,7 +33,13 @@ const CheckIcon = () => (
   </svg>
 );
 
-export function Code({ code }) {
+interface CodeBlockProps {
+  code: string;
+  file: string;
+  fileLink: string;
+}
+
+export function Code({ code, file, fileLink }: CodeBlockProps) {
   const [copied, setCopied] = createSignal(false);
 
   const copy = async () => {
@@ -43,14 +49,17 @@ export function Code({ code }) {
   };
 
   return (
-    <pre class="bg-[#EEF4FA] rounded-md p-8 my-8 relative">
+    <pre class="my-8 bg-[#e0e8f0] text-white font-medium h-full rounded-md">
+      <a href={fileLink} target="_blank" class="link flex justify-center py-1 text-sm">{file}</a>
+      <pre class="bg-[#F7F7F7] rounded-b-md h-full p-8 relative">
       <button
         onClick={copy}
-        class="absolute top-4 right-4 p-2 rounded-md bg-[#568FCB] text-[#fff]"
+        class="absolute top-4 right-4 p-2 rounded-md bg-[#e0e8f0] text-[#415F90]"
       >
         {copied() ? <CheckIcon /> : <CopyIcon />}
       </button>
-      <code class="text-[#568FCB] font-medium text-sm">{code}</code>
+      <code class="text-[#3A5683] font-medium text-sm">{code}</code>
+      </pre>
     </pre>
   );
 }
