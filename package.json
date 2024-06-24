@@ -1,12 +1,11 @@
 {
-  "name": "vite-template-solid",
+  "name": "recipe-solid-static",
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
+    "start": "vite preview",
+    "dev": "vite dev",
     "build": "vite build",
-    "serve": "vite preview",
     "format": "prettier . --write"
   },
   "license": "MIT",

@@ -1,55 +1,61 @@
 import { Code } from "./Code";
-import dashboard from "../public/dashboard.webp";
 
 export function Steps() {
-  const ZeropsYaml = `project:
-  name: zerops-solid
+const importyaml = `project:
+  name: recipe-solid
+  tags:
+    - zerops-recipe
 
 services:
-  - hostname: solidstatic
-    type: nginx@1.22
-    nginxConfig: |-
-      server {
-          listen 80 default_server;
-          listen [::]:80 default_server;
-
-          server_name _;
-          root /var/www/out;
-
-          location / {
-              try_files $uri $uri/ /index.html;
-          }
-
-          access_log syslog:server=unix:/dev/log,facility=local1 default_short;
-          error_log syslog:server=unix:/dev/log,facility=local1;
-      }
-    buildFromGit: https://github.com/fxck/zerops-solid-static
+  - hostname: app
+    type: static
     enableSubdomainAccess: true
-    minContainers: 1`.trim();
+    buildFromGit: https://github.com/zeropsio/recipe-solid-static`.trim();
+  
+const zeropsyaml = `zerops:
+  - setup: app
+    build:
+      base: nodejs@20
+      buildCommands:
+        - pnpm i
+        - pnpm build
+      deployFiles:
+        - dist/~
+    run:
+      base: static`.trim();
   return (
-    <div class="my-8">
-      <h1 class="text-3xl font-semibold">Step 1: Go To Zerops Dashboard</h1>
-      <img src={dashboard} class="rounded-lg my-6" alt="dashboard image" />
-      <p class="text-[#568FCB] text-xl font-medium">
-        Go to <a href="https://app.zerops.io/dashboard/projects" target="_blank">Zerops Dashboard</a> and Click on the 'Import Project' button on the sidebar. (Not a user?
-        <a href="https://zerops.io/" target="_blank">{" "}Register now</a> )
-      </p>
-      <div class="mt-16 pb-4">
-        <h1 class="text-3xl font-semibold">Step 2: Paste the project Yaml</h1>
-        <p class="text-[#568FCB] text-xl font-medium mt-4">
-          Copy the YAML code mentioned here and paste it to import this example.
-        </p>
-        <p class="text-[#568FCB] text-xl font-medium mt-4">
-          Alternatively, you can clone zerops-solid-static to your GitHub
-          profile and then replace the repository URL in the buildFromGit
-          parameter.
-        </p>
-        <p class="text-[#568FCB] text-xl font-medium mt-3">
-          For more information, explore our docs and if you still find yourself
-          stuck in the process, join our Discord community.
-        </p>
+    <div>
+      <div class="flex justify-center">
+        <p class="text-center mx-auto">Deploying will import the following structure (zerops-project-import.yml)<br/>
+        and use following (zerops.yml) instructions to build and deploy your app:</p>
       </div>
-      <Code code={ZeropsYaml} />
+      <div class="grid grid-cols md:grid-cols-2 font-light gap-5 md:gap-10 pt-4">
+        <div class="flex flex-col gap-5">
+          <Code fileLink="https://github.com/zeropsio/recipe-solid-static/blob/main/zerops-project-import.yml" file="zerops-project-import.yml" code={importyaml} />
+          <div
+          class="flex flex-col py-10 h-[260px] rounded-md gap-5 px-10 bg-[#F7F7F7]"
+        >
+          <a
+            href="https://github.com/zeropsio/recipe-solid-static"
+            target="_blank"
+            class="primarybutton rounded-full text-center text-md hover:duration-300 hover:no-underline"
+            >Recipe Source Code</a>
+          <a
+            href="https://discord.com/invite/WDvCZ54"
+            target="_blank"
+            class="discordbutton rounded-full text-center text-md hover:duration-300 hover:no-underline"
+            >Discord</a>
+          <a
+            href="https://docs.zerops.io"
+            target="_blank"
+            class="zeropsbutton rounded-full text-center text-md hover:duration-300 hover:no-underline"
+            >Documentation</a>
+        </div>
+        </div>
+        <div class="flex flex-col">
+          <Code fileLink="https://github.com/zeropsio/recipe-solid-static/blob/main/zerops.yml" file="zerops.yml" code={zeropsyaml} />
+        </div>
+      </div>
     </div>
   );
 }
